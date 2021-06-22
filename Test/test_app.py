@@ -1,8 +1,4 @@
-from flask import Flask
-import json
-
-from app import home
-
+from app import index
 def test_base_route():
     app = Flask(__name__)
     home(app)
@@ -12,3 +8,9 @@ def test_base_route():
     response = client.get(url)
     assert response.get_data() == b'Login'
     assert response.status_code == 200
+    
+#from app import index
+
+
+#def test_index():
+ #   assert index() == "Hello, world!"
