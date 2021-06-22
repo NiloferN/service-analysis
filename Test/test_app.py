@@ -1,7 +1,7 @@
 from flask import Flask
 import json
 
-from service-analysis.app import home
+from app import home
 
 def test_base_route():
     app = Flask(__name__)
