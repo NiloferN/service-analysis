@@ -1,4 +1,14 @@
-from __name__ import manager
+from flask import Flask
+import json
 
-def test_manager():
-    assert manager() == "Create"
+from flask_pytest_example.handlers.routes import configure_routes
+
+def test_base_route():
+    app = Flask(__name__)
+    configure_routes(app)
+    client = app.test_client()
+    url = '/'
+
+    response = client.get(url)
+    assert response.get_data() == b'Login'
+    assert response.status_code == 200
