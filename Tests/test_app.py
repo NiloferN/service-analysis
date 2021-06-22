@@ -1,8 +1,4 @@
-import pytest
+from app import manager
 
-def login(client, username, password):
-    return client.post('/', data=dict(
-        username="saran@gmail.com",
-        password="saran123"
-    ), follow_redirects=True)
-
+def test_manager():
+    assert manager() == "Create"
