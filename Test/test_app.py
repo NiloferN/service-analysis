@@ -1,11 +1,11 @@
 from flask import Flask
 import json
 
-from flask_pytest_example.handlers.routes import configure_routes
+from service-analysis.app import home
 
 def test_base_route():
     app = Flask(__name__)
-    configure_routes(app)
+    home(app)
     client = app.test_client()
     url = '/'
 
