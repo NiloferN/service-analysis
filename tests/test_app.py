@@ -1,4 +1,4 @@
-from app import app as flask_app
+import pytest
 
 def login(client, username, password):
     return client.post('/', data=dict(
